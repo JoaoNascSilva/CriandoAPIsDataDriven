@@ -51,7 +51,7 @@ namespace Shop.Controllers
         {
             //Verifica se Id informado é o mesmo do modelo
             if (id != model.Id)
-                return NotFound(new {message = "Categoria não encontrada"});
+                return NotFound(new {message = "Categoria não encontrada."});
 
             // Verifica se os dados são válidos
             if(!ModelState.IsValid)

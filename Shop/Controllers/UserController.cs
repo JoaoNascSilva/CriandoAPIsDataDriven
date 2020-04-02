@@ -26,7 +26,7 @@ namespace Shop.Controllers
             return users;
         }
 
-        [HttpPost]
+        [HttpPost] 
         [Route("")]
         [AllowAnonymous]
         public async Task<ActionResult<User>> Post([FromServices]DataContext context, [FromBody]User model)

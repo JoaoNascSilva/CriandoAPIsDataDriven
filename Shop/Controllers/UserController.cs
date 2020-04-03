@@ -36,8 +36,12 @@ namespace Shop.Controllers
 
             try
             {
+                model.Role = "employee";
                 context.Users.Add(model);
                 await context.SaveChangesAsync();
+
+                //Esconde a senha
+                model.Password = string.Empty;
                 return model;
             }
             catch (System.Exception)
@@ -83,7 +87,7 @@ namespace Shop.Controllers
                 await context.SaveChangesAsync();
                 return model;
             }
-            catch (System.Exception e)
+            catch (System.Exception)
             {
                 return BadRequest(new {message = "Não foi possível criar usuário."});
             }
